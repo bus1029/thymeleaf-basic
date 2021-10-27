@@ -99,6 +99,12 @@ class BasicController {
     return "basic/comments"
   }
 
+  @GetMapping("/block")
+  fun block(model: Model): String {
+    addUsers(model)
+    return "basic/block"
+  }
+
   @Component("helloBean")
   class HelloBean {
     fun hello(data: String): String {
