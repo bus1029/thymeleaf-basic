@@ -70,6 +70,11 @@ class BasicController {
     return "basic/operation"
   }
 
+  @GetMapping("/attribute")
+  fun attribute(): String {
+    return "basic/attribute"
+  }
+
   @Component("helloBean")
   class HelloBean {
     fun hello(data: String): String {
