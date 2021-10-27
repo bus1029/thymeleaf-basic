@@ -105,6 +105,13 @@ class BasicController {
     return "basic/block"
   }
 
+  @GetMapping("/javascript")
+  fun javascript(model: Model): String {
+    model.addAttribute("user", User("UserD", 40))
+    addUsers(model)
+    return "basic/javascript"
+  }
+
   @Component("helloBean")
   class HelloBean {
     fun hello(data: String): String {
