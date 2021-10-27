@@ -75,6 +75,18 @@ class BasicController {
     return "basic/attribute"
   }
 
+  @GetMapping("/each")
+  fun each(model: Model): String {
+    addUsers(model)
+    return "basic/each"
+  }
+
+  private fun addUsers(model: Model) {
+    val users = listOf<User>(User("UserA", 10),
+      User("UserB", 20), User("UserC", 30))
+    model.addAttribute("users", users)
+  }
+
   @Component("helloBean")
   class HelloBean {
     fun hello(data: String): String {
