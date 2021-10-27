@@ -81,10 +81,22 @@ class BasicController {
     return "basic/each"
   }
 
+  @GetMapping("/condition")
+  fun condition(model: Model): String {
+    addUsers(model)
+    return "basic/condition"
+  }
+
   private fun addUsers(model: Model) {
     val users = listOf<User>(User("UserA", 10),
       User("UserB", 20), User("UserC", 30))
     model.addAttribute("users", users)
+  }
+
+  @GetMapping("/comments")
+  fun comments(model: Model): String {
+    model.addAttribute("data", "Spring!")
+    return "basic/comments"
   }
 
   @Component("helloBean")
